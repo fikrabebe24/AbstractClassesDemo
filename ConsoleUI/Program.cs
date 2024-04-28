@@ -17,6 +17,7 @@ namespace ConsoleUI
 
             #region Vehicles
 
+
             /*
              * Create an abstract class called Vehicle
              * The vehicle class shall have three string properties: Year, Make, and Model
@@ -34,16 +35,46 @@ namespace ConsoleUI
 
             // Create a list of Vehicle called vehicles
 
+            var vehicles = new List<Vehicle>();
+
+           
             /*
              * Create 4 instances: 1 Car, 1 Motorcycle, and then 2 instances of type Vehicle (use explicit typing) but use constuctors from derived classes
              * 
              * Set the properties values with object initializer syntax
              */
 
+            Car car1 = new Car() { HasTrunk = true, Make = "Aston Martin", Model = "x3020", Year = 2024 };
+
+            MotorCycle motorcycle1 = new MotorCycle() { Make= "Kawassaki", Model= "Ninja", Year = 2020 };
+
+
+            Vehicle vehicle1;
+            vehicle1 = new MotorCycle() {Make = "Suzuki", Model = "No Se", NumberOfWheels = 2};
+
+            Vehicle vehicle2;
+            vehicle2 = new Car() { Make = "Toyota", Model = "Cororlla", Year = 2006};
+
             /*
              * Add the 4 vehicles to the list
              * Using a foreach loop iterate through the list and display each of the properties
              */
+
+            vehicles.Add(car1);
+            vehicles.Add(motorcycle1);
+            vehicles.Add(vehicle1);
+            vehicles.Add(vehicle2);
+
+            foreach(Vehicle item in vehicles)
+            {
+                Console.WriteLine(item.Year);
+                Console.WriteLine(item.Make);
+                Console.WriteLine(item.Model);
+                item.DriveAbstract();
+                item.DriveVirtual();
+
+                Console.WriteLine();
+            }
 
             // Call each of the drive methods for one car and one motorcycle
 
