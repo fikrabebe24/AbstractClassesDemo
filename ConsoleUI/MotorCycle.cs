@@ -7,6 +7,7 @@ namespace ConsoleUI
 
         public override void DriveAbstract()
         {
+            Console.WriteLine("The Motor cycke has 2 wheels");
         }
     }
 	
